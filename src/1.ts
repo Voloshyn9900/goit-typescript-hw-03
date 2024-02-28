@@ -16,4 +16,22 @@ class Student {
   }
 }
 
+/////////////////////////////////////////////////////////////
+
+class Students {
+  constructor(
+    public name: string,
+    public age: number,
+    public grade: string,
+    private status: string
+  ) {
+  }
+}
+
+const student1 = new Students('Yurii', 22, '5', 'ok');
+
+console.log(student1);
+console.log(student1.name);
+// console.log(student1.status);
+
 export {};

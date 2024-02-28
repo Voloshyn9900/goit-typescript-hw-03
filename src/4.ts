@@ -1,11 +1,34 @@
+class Key {
+  public signature: number = Math.random();
+
+  getSignature(): number {
+    return this.signature;
+  }
+}
+
 const key = new Key();
+console.log(key);
 
-const house = new MyHouse(key);
-const person = new Person(key);
+class Person {
+  public key: Key; //  public key: Key = key;  Присвоєння значення key
 
-house.openDoor(person.getKey());
+  constructor() {
+    this.key = new Key(); // Ініціалізація у конструкторі
+  }
 
-house.comeIn(person);
+  getKey() {
+    console.log(this.key);
+  }
+}
 
+const person = new Person();
+person.getKey();
+
+// const house = new MyHouse(key);
+// const person = new Person(key);
+
+// house.openDoor(person.getKey());
+
+// house.comeIn(person);
 
 export {};
